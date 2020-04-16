@@ -1,0 +1,46 @@
+    # global the_dict_list
+    # if 'the_dict' not in globals():
+
+    # print(the_dict_list)
+
+            # j = i
+            # if tr[x][j] == ' ':
+            #     continue
+            #     #j = j + 1
+            # if tr[x][j] == '\n':
+            #     break
+            # if tr[x][j] != ' ' and tr[x][j] != '\n':
+            #     print(f"At state {x} reading {a[i]} go to {tr[x][j]}")
+            # i = i + 1
+
+    # x = 0
+    # while x < s:
+    #     i = 0
+    #     while i < len(a) + 1:
+    #         for elem in tr:
+    #             if elem != ' ' and elem != '\n':
+    #                 print(f"At state {x} reading {a[i]} go to {elem}")
+    #             if elem == ' ':
+    #             # Logic here : the # of spaces in transitions of description will never exceed # of characters in the alphabet
+    #                 # print(f"At state {x} reading {a[i+1]} go to {elem}")
+    #                 continue
+    #             if elem == '\n':
+    #                 break
+    #         else:
+    #             # i += 1
+    #             continue
+               
+    #         break
+            
+    #     else:
+    #         x += 1
+    #         continue
+            
+    #     break
+
+    # print(f"Transitions of state:{x} is {ss_trans[x]} ")
+        
+    
+
+
+
