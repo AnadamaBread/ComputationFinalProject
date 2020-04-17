@@ -1,0 +1,307 @@
+SIMULATE DFA LOGFILE
+
+SIM: NUMBER OF STATES: 7
+SIM: ACCEPTING STATES: 5 6 
+SIM: ALPHABET: 01
+
+#### TRANSITIONS ####
+SIM: At state 0 reading 0 go to 1
+SIM: At state 0 reading 1 go to 2
+SIM: At state 1 reading 0 go to 3
+SIM: At state 1 reading 1 go to 4
+SIM: At state 2 reading 0 go to 5
+SIM: At state 2 reading 1 go to 6
+SIM: At state 3 reading 0 go to 3
+SIM: At state 3 reading 1 go to 4
+SIM: At state 4 reading 0 go to 5
+SIM: At state 4 reading 1 go to 6
+SIM: At state 5 reading 0 go to 3
+SIM: At state 5 reading 1 go to 4
+SIM: At state 6 reading 0 go to 5
+SIM: At state 6 reading 1 go to 6
+
+SIM: reading '0'
+IN STATE: 0 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 0 
+
+SIM: reading '1'
+IN STATE: 0 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 1 
+
+SIM: reading '00'
+IN STATE: 0 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 1 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 1 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 00 
+
+SIM: reading '01'
+IN STATE: 0 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 1 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 1 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 01 
+
+SIM: reading '10'
+IN STATE: 0 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 2 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 2 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+ACCEPT 10 
+
+SIM: reading '11'
+IN STATE: 0 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 2 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 2 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+ACCEPT 11 
+
+SIM: reading '000'
+IN STATE: 0 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 1 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 1 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 3 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 3 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 000 
+
+SIM: reading '001'
+IN STATE: 0 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 1 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 1 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 3 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 3 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 001 
+
+SIM: reading '010'
+IN STATE: 0 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 1 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 1 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 4 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 4 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+ACCEPT 010 
+
+SIM: reading '011'
+IN STATE: 0 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 1 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 1 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 4 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 4 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+ACCEPT 011 
+
+SIM: reading '100'
+IN STATE: 0 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 2 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 2 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 5 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 5 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 100 
+
+SIM: reading '101'
+IN STATE: 0 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 2 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 2 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 5 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 5 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 101 
+
+SIM: reading '110'
+IN STATE: 0 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 2 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 2 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 6 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 6 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+ACCEPT 110 
+
+SIM: reading '111'
+IN STATE: 0 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 2 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 2 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 6 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 6 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+ACCEPT 111 
+
+SIM: reading '0000'
+IN STATE: 0 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 1 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 1 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 3 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 3 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 3 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 3 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 0000 
+
+SIM: reading '0001'
+IN STATE: 0 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 1 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 1 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 3 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 3 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 3 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 3 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 0001 
+
+SIM: reading '0010'
+IN STATE: 0 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 1 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 1 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 3 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 3 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 4 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 4 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+ACCEPT 0010 
+
+SIM: reading '0011'
+IN STATE: 0 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 1 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 1 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 3 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 3 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 4 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 4 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+ACCEPT 0011 
+
+SIM: reading '0100'
+IN STATE: 0 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 1 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 1 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 4 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 4 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 5 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 5 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 0100 
+
+SIM: reading '0101'
+IN STATE: 0 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 1 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 1 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 4 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 4 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 5 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 5 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 0101 
+
+SIM: reading '0110'
+IN STATE: 0 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 1 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 1 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 4 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 4 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 6 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 6 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+ACCEPT 0110 
+
+SIM: reading '0111'
+IN STATE: 0 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 1 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 1 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 4 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 4 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 6 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 6 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+ACCEPT 0111 
+
+SIM: reading '1000'
+IN STATE: 0 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 2 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 2 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 5 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 5 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 3 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 3 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 1000 
+
+SIM: reading '1001'
+IN STATE: 0 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 2 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 2 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 5 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 5 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 3 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 3 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 1001 
+
+SIM: reading '1010'
+IN STATE: 0 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 2 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 2 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 5 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 5 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 4 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 4 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+ACCEPT 1010 
+
+SIM: reading '1011'
+IN STATE: 0 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 2 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 2 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 5 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 5 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 4 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 4 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+ACCEPT 1011 
+
+SIM: reading '1100'
+IN STATE: 0 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 2 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 2 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 6 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 6 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 5 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 5 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 1100 
+
+SIM: reading '1101'
+IN STATE: 0 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 2 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 2 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 6 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 6 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 5 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 5 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+REJECT 1101 
+
+SIM: reading '1110'
+IN STATE: 0 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 2 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 2 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 6 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 6 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 6 READING: 0 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 6 READING: 0 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+ACCEPT 1110 
+
+SIM: reading '1111'
+IN STATE: 0 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 0 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 2 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 2 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 6 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 6 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+IN STATE: 6 READING: 1 TRANSISTIONS {list_of_dict[curr_state]}
+IN STATE: 6 READING: 1 TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}
+ACCEPT 1111 

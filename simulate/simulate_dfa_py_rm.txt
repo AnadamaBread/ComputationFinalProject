@@ -39,6 +39,16 @@
     #     break
 
     # print(f"Transitions of state:{x} is {ss_trans[x]} ")
+
+        # print("###########")
+    # tr_list_list = [tr_list[x:x+states] for x in range(0, len(tr_list), states)]
+    # print(tr_list_list)
+    # # tr_list_new = []
+    # # for x in range(0 , len(tr_list), states):
+    # #     tr_list_new += [tr_list[x:x+states]]
+    # # print(tr_list_new)
+    # print("###########")
+    # print(tr_list)
         
     
 
