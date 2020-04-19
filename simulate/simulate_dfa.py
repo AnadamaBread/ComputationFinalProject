@@ -28,10 +28,10 @@ def simulate(list_of_dict, accepts, input_list):
         for letter in in_string:
             #
             LOGF.write(f"IN STATE: {curr_state} READING: {letter} "
-                       "TRANSISTIONS {list_of_dict[curr_state]}\n")
+                       f"TRANSISTIONS {list_of_dict[curr_state]}\n")
             next_state = list_of_dict[curr_state][letter]
             LOGF.write(f"IN STATE: {curr_state} READING: {letter} "
-                       "TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}\n")
+                       f"TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}\n")
             curr_state = int(next_state)
         #
         #
@@ -121,8 +121,9 @@ def main():
     #
     tr_list = []
     for line in transit.split('\n'):
-        if line != ('', ' '):
+        if line not in '' and line not in ' ':
             tr_list += [line.split(' ')]
+    # print(tr_list)
     #
     #
     LOGF.write(f"SIM: NUMBER OF STATES: {states}\n")
@@ -130,12 +131,17 @@ def main():
     LOGF.write(f"SIM: ALPHABET: {alpha}\n")
     #
     the_dict_list = makedict(tr_list, alpha, states)
+    # print(the_dict_list)
     simulate(the_dict_list, acc_list, in_list)
     #
 #
 #
 #
 if __name__ == "__main__":
+    if len(sys.argv[1:]) != 2:
+        print("Please refer to the following for correct program arguments:")
+        print(f"> {sys.argv[0]} 'DFA_description text file' 'DFA_input text file")
+        sys.exit()
     if os.path.exists("simulate_dfa_log.txt"):
         os.remove("simulate_dfa_log.txt")
     LOGF = open("simulate_dfa_log.txt", "w")
