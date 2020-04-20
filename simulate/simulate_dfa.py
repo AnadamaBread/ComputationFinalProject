@@ -28,10 +28,10 @@ def simulate(list_of_dict, accepts, input_list):
         for letter in in_string:
             #
             LOGF.write(f"IN STATE: {curr_state} READING: {letter} "
-                       f"TRANSISTIONS {list_of_dict[curr_state]}\n")
+                       f"TRANSITIONS {list_of_dict[curr_state]}\n")
             next_state = list_of_dict[curr_state][letter]
             LOGF.write(f"IN STATE: {curr_state} READING: {letter} "
-                       f"TRANSISTIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}\n")
+                       f"TRANSITIONS: {list_of_dict[curr_state]} CHANGING TO STATE {next_state}\n")
             curr_state = int(next_state)
         #
         #
@@ -140,7 +140,7 @@ def main():
 if __name__ == "__main__":
     if len(sys.argv[1:]) != 2:
         print("Please refer to the following for correct program arguments:")
-        print(f"> {sys.argv[0]} 'DFA_description text file' 'DFA_input text file")
+        print(f"> {sys.argv[0]} 'DFA_description text file' 'DFA_input text file'")
         sys.exit()
     if os.path.exists("simulate_dfa_log.txt"):
         os.remove("simulate_dfa_log.txt")

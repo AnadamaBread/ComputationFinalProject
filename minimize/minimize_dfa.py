@@ -9,6 +9,52 @@ import sys
 import os
 #
 #
+def printnewdfa(state_count, accepted, alphabet, t_list_d):
+    """
+    printnewdfa() prints out a dfa description formatted as 
+    requried. Exactly the same as the input dfa descriptions. 
+    The description is printed to standard output.
+    """
+    print(f"Number of states: {state_count}")
+    print(f"Accepting states:", end=' ')
+    for elem in accepted:
+        if elem == accepted[-1]:
+            print(f"{elem}", end='')
+        else:
+            print(f"{elem}", end=' ')
+    print()
+    print("Alphabet:", end=' ')
+    for elem in alphabet:
+        print(f"{elem}",end="")
+    print()
+    for state in range(state_count):
+        i = 0
+        while i < len(alphabet):
+            if i+1 == len(alphabet):
+                print(f"{t_list_d[state][alphabet[i]]}",end="")
+            else:
+                print(f"{t_list_d[state][alphabet[i]]}",end=" ")
+            i = i + 1
+        print()
+
+def minimize_out(state_num, accepted_list, alphabet, list_of_dict, indistinguishable):
+    """
+    minimize_out() creates a new number of states using orignal state number minus
+    indistinguishables pairs taking into account three or more pair combinations
+    of states. Then states with the same transistion after reading any character
+    from the alphabet will become a single state. State combinations with three or more
+    states will be merged and overwritten with the transistions the occures the most per 
+    those states. The number detucted from the original state count will be deducted from 
+    each element in the accepted states and each element in the transisions. 
+    """
+    
+    indist_scount = 0
+    print(indistinguishable)
+    for elem in indistinguishable:
+        pass
+
+
+#
 def chartprint(chart_list):
     """
     chartprint() is custom 'poor mans' formatting of a 2D list into a matrix
@@ -90,6 +136,9 @@ def minimize(state_num, accepted_list, alphabet, list_of_dict, chart_list):
         if elem not in result and elem.reverse() not in result:
             result.append(elem)
             LOGF.write(f"INDISTINGUISHABLE: {elem}\n")
+    if result:
+        minimize_out(state_num, accepted_list, alphabet, list_of_dict, result)
+
     #
     # for elem in result:
     #     LOGF.write(f"INDISTINGUISHABLE: {elem}\n")
