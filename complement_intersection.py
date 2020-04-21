@@ -30,15 +30,20 @@ def printnewdfa(state_count, accepted, alphabet, t_list_d):
                 print(f"{t_list_d[state][alphabet[i]]}",end=" ")
             i = i + 1
         print()
-    
 
 def complement(state_count, accepted, alphabet, t_list_d):
+    """
+    complement() complements a DFA by turning originally normal states into 
+    accepting states and originally accepting states into normal states.
+    """
     new_accepted = []
     for state in range(state_count):
         if str(state) not in accepted:
             new_accepted.append(int(state))
     # Print everything:
     printnewdfa(state_count, new_accepted, alphabet, t_list_d)
+
+def intersect(a_states, a_acc, alphabet, a_dfa_list, b_states, b_acc, b_dfa_list):
 
 
 def makedict(transitions, alphabet, states_num):
@@ -116,6 +121,7 @@ def main():
             if line not in '' and line not in ' ':
                 tr_blist += [line.split(' ')]
         dfa_b = makedict(tr_blist, alpha_b, states_b)
+        intersect(states, acc_list, alpha, dfa_a, states_b, acc_blist, dfa_b)
     else:
         pass
 

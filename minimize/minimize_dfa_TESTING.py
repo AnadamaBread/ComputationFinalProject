@@ -3,12 +3,12 @@ Minimize a DFA given a description of a DFA. Output
 to standard out using the table-of-distinguishable-states
 to minimize. Ordering of states may differ compared to output.
 """
-
-
+#
+#
 import sys
 import os
-
-
+#
+#
 def printnewdfa(state_count, accepted, alphabet, t_list_d):
     """
     printnewdfa() prints out a dfa description formatted as
@@ -17,39 +17,27 @@ def printnewdfa(state_count, accepted, alphabet, t_list_d):
     """
     print(f"Number of states: {state_count}")
     print(f"Accepting states:", end=' ')
-    OUTF.write(f"Number of states: {state_count}\n")
-    OUTF.write(f"Accepting states: ")
     for elem in accepted:
         if elem == accepted[-1]:
             print(f"{elem}", end='')
-            OUTF.write(f"{elem}")
         else:
             print(f"{elem}", end=' ')
-            OUTF.write(f"{elem} ")
     print()
-    OUTF.write('\n')
     print("Alphabet:", end=' ')
-    OUTF.write("Alphabet: ")
     for elem in alphabet:
         print(f"{elem}", end="")
-        OUTF.write(f"{elem}")
     print()
-    OUTF.write('\n')
     for state in range(state_count):
         i = 0
         while i < len(alphabet):
             if i+1 == len(alphabet):
                 print(f"{t_list_d[state][alphabet[i]]}", end="")
-                OUTF.write(f"{t_list_d[state][alphabet[i]]}")
-
             else:
                 print(f"{t_list_d[state][alphabet[i]]}", end=" ")
-                OUTF.write(f"{t_list_d[state][alphabet[i]]} ")
             i = i + 1
         print()
-        OUTF.write('\n')
 
-def minimize_out(state_num, accepted_list, alphabet, list_of_dict, indistinguishable):
+# def minimize_out(state_num, accepted_list, alphabet, list_of_dict, indistinguishable):
     """
     ########################################
     THIS FUNCTION IS INCOMPLETE AND NOT USED
@@ -62,51 +50,33 @@ def minimize_out(state_num, accepted_list, alphabet, list_of_dict, indistinguish
     those states. The number deducted from the original state count will be deducted from
     each element in the accepted states and each element in the transisions.
     """
-    indist_scount = 0
-    list_of_states = []
-    push_accepting = []
-    convert_indist = {elem[0]:elem[1] for elem in indistinguishable}
-    indist_scount = state_num - len(convert_indist)
-    for state in range(state_num):
-        if state in convert_indist:
-            list_of_dict[state] = list_of_dict[convert_indist[state]]
-    visited = []
-    for state in range(state_num):
-        if str(state) not in accepted_list:
-            if list_of_dict[state] not in visited:
-                list_of_states.append(list_of_dict[state])
-                LOGF.write(f"NEW: Transitions at state {state} : {list_of_dict[state]}\n")
-                visited.append(list_of_dict[state])
-            else:
-                LOGF.write(f"Transitions at state {state} : {list_of_dict[state]}\n")
-        else:
-            list_of_states.append(list_of_dict[state])
-            LOGF.write(f"ACCEPTING STATES: ")
-            LOGF.write(f"Transitions at state {state} : {list_of_dict[state]}\n")
-
-    LOGF.write(f"\nNew State Transitions:\n")
-    for state in range(indist_scount):
-        for elem in alphabet:
-            value = int(list_of_states[state].get(elem))
-            if value >= len(convert_indist):
-                value = value - len(convert_indist)
-            list_of_states[state][elem] = value
-        LOGF.write(f"Transitions at state {state} : {list_of_states[state]}\n")
-
-    for elem in accepted_list:
-        if int(elem) >= len(convert_indist):
-            new_elem = int(elem) - len(convert_indist)
-            LOGF.write(f"NEW ACCEPTING STATE: {new_elem}\n")
-            push_accepting.append(str(new_elem))
-        else:
-            push_accepting.append(elem)
-    printnewdfa(indist_scount, push_accepting, alphabet, list_of_states)
-
+    # indist_scount = 0
+    # list_of_states = []
+    # push_states = []
+    # print(indistinguishable)
+    # for elem in indistinguishable:
+    #     for thing in elem:
+    #         if thing not in push_states and thing not in elem[-1]:
+    #             push_states.append(thing)
+#
+#    printnewdfa(indist_scount, accepted, alphabet, t_list_d)
+#
 def chartprint(chart_list):
     """
     chartprint() is custom 'poor mans' formatting of a 2D list into a matrix
     for either standard out or the log file.
     """
+    i = 0
+    j = 0
+    print("    ", end="")
+    for row in chart_list:
+        print(j, end="    ")
+        j = j + 1
+    print("\n", end="")
+    for row in chart_list:
+        print(f"{i} {row}")
+        i = i + 1
+    print('\n')
     i = 0
     j = 0
     LOGF.write("    ")
@@ -126,12 +96,14 @@ def minimize(state_num, accepted_list, alphabet, list_of_dict, chart_list):
     a single character from the alphabet. If reading the character transitions
     either (not both) states into a final state then that pair is distinguishable.
     """
-
+    #
     indistinguishable = []
-
+    #
     for state_one in range(state_num):
+    #
         for state_two in range(state_num):
             if state_one != state_two:
+            #
                 for elem in alphabet:
                     LOGF.write(f"TEST : [{state_one}, {state_two}]  ")
                     LOGF.write(f"WITH {elem}  ")
@@ -153,7 +125,8 @@ def minimize(state_num, accepted_list, alphabet, list_of_dict, chart_list):
                         chart_list[state_one][state_two] = 'X'
                         chart_list[state_two][state_one] = 'X'
                         chartprint(chart_list)
-
+            #
+    #
     i = 0
     while i < state_num:
         j = 0
@@ -163,21 +136,23 @@ def minimize(state_num, accepted_list, alphabet, list_of_dict, chart_list):
                     indistinguishable.append([i, j])
             j = j +1
         i = i + 1
-
+    #
     result = []
     for elem in indistinguishable:
         if elem not in result and elem.reverse() not in result:
             result.append(elem)
             LOGF.write(f"INDISTINGUISHABLE: {elem}\n")
-            print(f"INDISTINGUISHABLE: {elem}")
     if result:
-        LOGF.write(f"INPUT DFA IS NOT MINIMIZED\n\n")
-        print("\nINPUT DFA IS NOT MINIMIZED\n")
-        print("NEW MINIMIZED DFA:")
-        minimize_out(state_num, accepted_list, alphabet, list_of_dict, result)
+        LOGF.write(f"INPUT DFA IS NOT MINIMIZED")
+        # minimize_out(state_num, accepted_list, alphabet, list_of_dict, result)
     else:
-        LOGF.write(f"INPUT DFA IS ALREADY MINIMIZED\n\n")
-        print(f"INPUT DFA IS MINIMIZED DFA")
+        LOGF.write(f"INPUT DFA IS ALREADY MINIMIZED\n")
+        print(f"INPUT DFA IS MINIMIZED DFA\n")
+    #
+    # for elem in result:
+    #     LOGF.write(f"INDISTINGUISHABLE: {elem}\n")
+#
+#
 
 def makeminchart(state_num, accepted_list, alphabet, tran_list):
     """
@@ -186,6 +161,7 @@ def makeminchart(state_num, accepted_list, alphabet, tran_list):
     then distinguishing final states. This function also creates a
     list of dictionaries for transitions at each state.
     """
+    print('\n')
     list_of_dict = []
     push_dict = {}
     for state in range(state_num):
@@ -200,10 +176,10 @@ def makeminchart(state_num, accepted_list, alphabet, tran_list):
             push_dict_copy = push_dict.copy()
             list_of_dict.append(push_dict_copy)
             push_dict = {}
-
+    # print(list_of_dict)
     chart_list = [['_'] * state_num for state in range(state_num)]
     chartprint(chart_list)
-
+    # print(chart_list)
     i = 0
     while i < state_num:
         j = 0
@@ -216,10 +192,13 @@ def makeminchart(state_num, accepted_list, alphabet, tran_list):
                 chart_list[j][i] = 'X'
             j = j + 1
         i = i + 1
-
+    #
     chartprint(chart_list)
-
+    #
     minimize(state_num, accepted_list, alphabet, list_of_dict, chart_list)
+#
+#
+#
 
 def main():
     """
@@ -241,12 +220,14 @@ def main():
             alpha = line
         else:
             transit = transit + line.rstrip() + '\n'
-
+    #
     states = int(states.rsplit(":", 1)[1])
     acc_states = (acc_states.rsplit(':', 1)[1]).lstrip().rstrip()
     acc_list = acc_states.split(' ')
     alpha = (alpha.rsplit(':', 1)[1]).lstrip().rstrip()
-
+    #
+    print(f"Number of states: {states}\nAccepting States: {acc_list}\n")
+    print(f"alphabet: {alpha}")
     LOGF.write(f"MIN: NUMBER OF STATES: {states}\n")
     LOGF.write(f"MIN: ACCEPTING STATES: {acc_states}\n")
     LOGF.write(f"MIN: ALPHABET: {alpha}\n")
@@ -254,9 +235,12 @@ def main():
     for line in transit.split('\n'):
         if line not in '' and line not in ' ':
             tr_list += [line.split(' ')]
-
+    #
+    print(tr_list)
     makeminchart(states, acc_list, alpha, tr_list)
-
+#
+#
+#
 if __name__ == "__main__":
     if len(sys.argv[1:]) != 1:
         print("Please refer to the following for correct program arguments:")
@@ -265,10 +249,5 @@ if __name__ == "__main__":
     if os.path.exists("minimize_dfa_log.txt"):
         os.remove("minimize_dfa_log.txt")
     LOGF = open("minimize_dfa_log.txt", "w")
-    print("Minimize logfile and outputfile created!", end='\n''\n')
     LOGF.write("MINIMIZE DFA LOGFILE\n\n")
-    if os.path.exists("minimize_dfa_out.txt"):
-        os.remove("minimize_dfa_out.txt")
-    OUTF = open("minimize_dfa_out.txt", "w")
-    OUTF.write("MINIMIZE DFA OUTPUT\n\n")
     main()
