@@ -31,11 +31,11 @@ Execution:
     ```
 
 pylint OUTPUT:
-
+  
 ------------------------------------------------------------------
 Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00
 
-
+  
 ## DFA Minimization Python3 Program 
 
 Program Description:
@@ -49,10 +49,10 @@ Execution:
 
 pylint OUTPUT:
 
-************* Module minimize_dfa
-minimize_dfa.py:52:0: R0912: Too many branches (13/12) (too-many-branches)
-minimize_dfa.py:122:0: R0912: Too many branches (14/12) (too-many-branches)
-
+************* Module minimize_dfa  
+minimize_dfa.py:52:0: R0912: Too many branches (13/12) (too-many-branches)  
+minimize_dfa.py:122:0: R0912: Too many branches (14/12) (too-many-branches)  
+  
 -------------------------------------------------------------------
 Your code has been rated at 9.90/10 (previous run: 10.00/10, -0.10)
 
