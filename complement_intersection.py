@@ -40,10 +40,27 @@ def complement(state_count, accepted, alphabet, t_list_d):
     for state in range(state_count):
         if str(state) not in accepted:
             new_accepted.append(int(state))
-    # Print everything:
-    printnewdfa(state_count, new_accepted, alphabet, t_list_d)
+    # Print everything if Complement:
+    if(sys.argv[1:] == 1):
+        printnewdfa(state_count, new_accepted, alphabet, t_list_d)
+    return new_accepted
 
 def intersect(a_states, a_acc, alphabet, a_dfa_list, b_states, b_acc, b_dfa_list):
+    """
+    intersect() takes advantage of complement by complementing both DFAs, finding the union of the DFAs,
+    then complementing said union. (DeMorgan's Law)
+    """
+    complement_a = complement(a_states, a_acc, alphabet, a_dfa_list)
+    complement_b = complement(b_states, b_acc, alphabet, b_dfa_list)
+
+    inter_states = a_states + b_states
+    accepting_states = complement_a + complement_b
+    print(inter_states)
+    print(accepting_states)
+    print(a_dfa_list)
+    print()
+    print(b_dfa_list)
+
 
 
 def makedict(transitions, alphabet, states_num):
@@ -61,7 +78,6 @@ def makedict(transitions, alphabet, states_num):
 
     # print(list_of_dicts)
     return list_of_dicts
-
 
 def main():
     states = ''

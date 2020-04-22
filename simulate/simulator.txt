@@ -1,0 +1,5 @@
+#Bash run script for Simulate
+#Information in README
+
+
+python3 simulate_dfa.py $@

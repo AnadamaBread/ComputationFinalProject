@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Bash run script for Minimize
+# Instructions in README
+
+python3 minimize_dfa.py $@

@@ -128,4 +128,5 @@ if __name__ == "__main__":
         os.remove("simulate_dfa_log.txt")
     LOGF = open("simulate_dfa_log.txt", "w")
     LOGF.write("SIMULATE DFA LOGFILE\n\n")
+    print("Simulate Log and Output Files created!")
     main()

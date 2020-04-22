@@ -51,9 +51,6 @@ def printnewdfa(state_count, accepted, alphabet, t_list_d):
 
 def minimize_out(state_num, accepted_list, alphabet, list_of_dict, indistinguishable):
     """
-    ########################################
-    THIS FUNCTION IS INCOMPLETE AND NOT USED
-    ########################################
     minimize_out() creates a new number of states using original state number minus
     indistinguishable pairs taking into account three or more pair combinations
     of states. Then states with the same transition after reading any character
@@ -258,6 +255,7 @@ def main():
     makeminchart(states, acc_list, alpha, tr_list)
 
 if __name__ == "__main__":
+    # os.system('./minimize.txt')
     if len(sys.argv[1:]) != 1:
         print("Please refer to the following for correct program arguments:")
         print(f"> {sys.argv[0]} 'DFA_description text file'")
