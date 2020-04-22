@@ -1,15 +1,14 @@
-README For CSCE_355 Programming Assignment
+# README For CSCE_355 Programming Assignment
 
-Completed Programs: Simulating a DFA, Minimizing a DFA, Text Search
+__Completed Programs:__ Simulating a DFA, Minimizing a DFA, Text Search
 
-Synopsis:
+__Synopsis:__
 
-    Each program is written in Python 3 (Python 3.7.5). Each program will print to both standard out as well as
-    an output file
+ Each program is written in Python 3 (Python 3.7.5). Each program will output to both standard out as well as 
+ a created output file. Each program will also create and log to a log file. The format of these files would look like so:
+ "simulate_dfa_log.txt" or "simulate_dfa_out.txt"
 
-###################################################################################################################
-
-DFA Simulation Python3 Program
+## DFA Simulation Python3 Program
 
 Program Description:
     This program takes input of a DFA description and a text file of strings for the DFA to read. 
@@ -18,28 +17,30 @@ Program Description:
     the simulation.
 
 Execution:
-    To execute the python 3 program, run the executable bash script along with the arguments like so:
-    
-        './simulator.txt 'dfa_description.txt' 'input_strings.txt''
+    To execute the python 3 program, run the executable bash script along with the arguments like so:  
+    ```
+    ./simulator.txt 'dfa_description.txt' 'input_strings.txt'
+    ```
 
+pylint OUTPUT:
 
-Pylint OUTPUT:
---------------------------------------------------------------------
+------------------------------------------------------------------
 Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00
 
-###################################################################################################################
 
-DFA Minimization Python3 Program 
+## DFA Minimization Python3 Program 
 
 Program Description:
 
 Execution:
     To execute the python 3 program, run the executable bash script (within the 'minimize' directory) along with 
-    the arguments like so:
-
-        './minimizer.txt 'dfa_description.txt''
+    the arguments like so:  
+    ```
+     ./minimizer.txt 'dfa_description.txt'
+    ```
 
 pylint OUTPUT:
+
 ************* Module minimize_dfa
 minimize_dfa.py:52:0: R0912: Too many branches (13/12) (too-many-branches)
 minimize_dfa.py:122:0: R0912: Too many branches (14/12) (too-many-branches)
