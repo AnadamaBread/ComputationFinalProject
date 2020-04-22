@@ -8,6 +8,14 @@ __Synopsis:__
  a created output file. Each program will also create and log to a log file. The format of these files would look like so:
  "simulate_dfa_log.txt" or "simulate_dfa_out.txt"
 
+__pylint information:__
+pylint --version  
+
+pylint 2.4.4
+astroid 2.3.3
+Python 3.7.5 (default, Nov 20 2019, 09:21:52) 
+[GCC 9.2.1 20191008]
+
 ## DFA Simulation Python3 Program
 
 Program Description:
@@ -47,4 +55,12 @@ minimize_dfa.py:122:0: R0912: Too many branches (14/12) (too-many-branches)
 
 -------------------------------------------------------------------
 Your code has been rated at 9.90/10 (previous run: 10.00/10, -0.10)
+
+## Text Search  Python3 Program
+
+Program Description
+
+Execution
+
+pylint OUTPUT
 
