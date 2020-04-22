@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Bash run script for Complemnt
+# Instructions in README
+
+python3 complement.py $@

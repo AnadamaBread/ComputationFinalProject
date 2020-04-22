@@ -1,14 +1,15 @@
 """
+Program written by Luis Baez.
 text_search.py takes input of a file containing a text string. Reading this string,
 output a DFA description that accepts any string x if and only if the input string
 is a substring of the string x.
 The Alphabet will always and only be the 26 character lower case alphabet:
 abcdefghijklmnopqrstuvwxyz
 """
-#
+
 import sys
 import os
-#
+
 def printnewdfa(state_count, accepted, alphabet, t_list_d):
     """
     printnewdfa() prints out a dfa description formatted as
@@ -17,25 +18,37 @@ def printnewdfa(state_count, accepted, alphabet, t_list_d):
     """
     print(f"Number of states: {state_count}")
     print(f"Accepting states:", end=' ')
+    OUTF.write(f"Number of states: {state_count}\n")
+    OUTF.write(f"Accepting states: ")
     for elem in accepted:
         if elem == accepted[-1]:
             print(f"{elem}", end='')
+            OUTF.write(f"{elem}")
         else:
             print(f"{elem}", end=' ')
+            OUTF.write(f"{elem} ")
     print()
+    OUTF.write('\n')
     print("Alphabet:", end=' ')
+    OUTF.write("Alphabet: ")
     for elem in alphabet:
         print(f"{elem}", end="")
+        OUTF.write(f"{elem}")
     print()
+    OUTF.write('\n')
     for state in range(state_count):
         i = 0
         while i < len(alphabet):
             if i+1 == len(alphabet):
                 print(f"{t_list_d[state][alphabet[i]]}", end="")
+                OUTF.write(f"{t_list_d[state][alphabet[i]]}")
+
             else:
                 print(f"{t_list_d[state][alphabet[i]]}", end=" ")
+                OUTF.write(f"{t_list_d[state][alphabet[i]]} ")
             i = i + 1
         print()
+        OUTF.write('\n')
 
 def maketextdfa(in_string, alphabet):
     """
@@ -47,8 +60,6 @@ def maketextdfa(in_string, alphabet):
     """
     states_num = len(in_string) + 1
     accepting_state = [int(len(in_string))]
-    # alphabet = alphabet
-    ### TRANSITIONS: ###
     tr_list = []
     push_define = {}
     for state in range(states_num):
@@ -71,9 +82,7 @@ def maketextdfa(in_string, alphabet):
             push_define = {}
         LOGF.write('\n')
     printnewdfa(states_num, accepting_state, alphabet, tr_list)
-#
-#
-#
+
 def main():
     """
     main() reads the text string contained in the input file and
@@ -85,10 +94,10 @@ def main():
         lines = file_object.readlines()
     for line in lines:
         in_string = line.rstrip()
-    #
+
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     maketextdfa(in_string, alphabet)
-#
+
 if __name__ == "__main__":
     if len(sys.argv[1:]) != 1:
         print("Please refer to the following for correct program arguments:")
@@ -98,4 +107,8 @@ if __name__ == "__main__":
         os.remove("text_search_dfa_log.txt")
     LOGF = open("text_search_dfa_log.txt", "w")
     LOGF.write("TEXT SEARCH DFA LOGFILE\n\n")
+    if os.path.exists("text_search_dfa_out.txt"):
+        os.remove("text_search_dfa_out.txt")
+    OUTF = open("text_search_dfa_out.txt", "w")
+    OUTF.write("TEXT SEARCH DFA OUTPUT FILE\n\n")
     main()

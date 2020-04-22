@@ -1,4 +1,5 @@
 """
+Program written by Luis Baez.
 Minimize a DFA given a description of a DFA. Output
 to standard out using the table-of-distinguishable-states
 to minimize. Ordering of states may differ compared to output.

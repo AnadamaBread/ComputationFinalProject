@@ -1,4 +1,5 @@
 """
+Program written by Luis Baez.
 Simulate a DFA using a DFA description and an input file.
 Output (to standard out) the acceptance or rejection from
 each input in the text file after being ran through the DFA

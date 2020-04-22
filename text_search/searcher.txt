@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Bash run script for Text Search
+# Instructions in README
+
+python3 text_search.py $@
